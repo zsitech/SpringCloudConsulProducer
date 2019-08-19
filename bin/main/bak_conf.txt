@@ -1,0 +1,17 @@
+server:    
+  port: 10001
+ 
+spring: 
+  cloud:      
+    consul:      
+      host: 172.18.164.241
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}:${spring.application.instance_id}:${random.value}
+        tags: prd-one
+        service-name: ${spring.application.name}
+        health-check-path: /actuator/health
+        health-check-interval: 5s
+        health-check-url: http://172.18.164.251:10001/actuator/health #172.18.164.251
+        register: true
+        prefer-ip-address: true #注册服务使用IP地址
