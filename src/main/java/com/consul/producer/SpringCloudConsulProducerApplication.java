@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SpringCloudConsulProducerApplication {
 
-	@RequestMapping("/say_hello")
+	@RequestMapping(value="/say_hello_producer")
 	public String SayHello() {
 		return "Hello, Spring Cloud Consul.";
 	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCloudConsulProducerApplication.class, args);
 	}
